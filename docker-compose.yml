@@ -1,0 +1,23 @@
+services:
+
+  backend:
+    build: .
+    container_name: fedhold-backend
+    ports:
+      - "8000:8000"
+    environment:
+      FEDHOLD_RUN_ID: RUN-DOCKER-001
+      FEDHOLD_CONTROL_MODE: RULE_BASED
+    volumes:
+      - ./database:/app/database
+    restart: unless-stopped
+
+  simulator:
+    build: .
+    container_name: fedhold-simulator
+    depends_on:
+      - backend
+    environment:
+      FEDHOLD_API_HOST: backend
+    command: python /app/simulator/bus_simulator.py
+    restart: unless-stopped

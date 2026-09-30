@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FedHold - Bus Control System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>FedHold</h1>
+            <p>Intelligent Bus Bunching Detection & Control System</p>
+        </div>
+
+        <div id="system-status" class="status normal">
+            SYSTEM CONNECTING...
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="card">
+                <h3>Active Buses</h3>
+                <div id="total-buses">0</div>
+            </div>
+
+            <div class="card">
+                <h3>Bunching Alerts</h3>
+                <div id="total-alerts">0</div>
+            </div>
+
+            <div class="card">
+                <h3>Interventions</h3>
+                <div id="total-interventions">0</div>
+            </div>
+
+            <div class="card">
+                <h3>Last Update</h3>
+                <div id="last-update">--</div>
+            </div>
+
+        </section>
+
+
+        <!-- Live Bus Status -->
+        <section class="panel">
+
+            <h2>Live Bus Status</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Bus ID</th>
+                        <th>Position</th>
+                        <th>Speed</th>
+                        <th>Passengers</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bus-table">
+                    <tr>
+                        <td colspan="5">Loading...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- Bunching Alerts -->
+        <section class="panel">
+
+            <h2>Bunching Alerts</h2>
+
+            <div id="alerts-container">
+                <p>No alerts</p>
+            </div>
+
+        </section>
+
+
+        <!-- Control Decisions -->
+        <section class="panel">
+
+            <h2>Control Decisions</h2>
+
+            <div id="decisions-container">
+                <p>No control decisions</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        FedHold Bus Bunching System | Real-Time Monitoring
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
